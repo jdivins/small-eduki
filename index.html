@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/speech-commands"></script>
+  </head>
+  <body>
+    <h1>Identificar persones per la seva veu</h1>
+    <div id="console">Info</div>
+    <script src="demo_audio.js"></script>
+    <button id="jordi" onmousedown="collect(0)" onmouseup="collect(null)">Soroll</button>
+    <button id="rocio" onmousedown="collect(1)" onmouseup="collect(null)">Persona 1</button>
+    <button id="maiol" onmousedown="collect(2)" onmouseup="collect(null)">Persona 2</button>
+    <button id="bruna" onmousedown="collect(3)" onmouseup="collect(null)">Persona 3</button>
+    <button id="noise" onmousedown="collect(4)" onmouseup="collect(null)">Persona 4</button>
+    <br/><br/>
+    <button id="train" onclick="train()">Entrenar</button>
+    <br/><br/>
+    <button id="listen" onclick="listen()">Escoltar</button>
+    <input type="text" id="outputName">
+    <div class="instructions">
+        <h2>Gravar persones/sons</h2>
+        <ul>
+            <li>Mantenir pitjat entre 3 i 5 segons el buto <b>Soroll</b> estant en silenci. Repetir-ho 4 o 5 cops</li>
+            <li>Mantenir pitjat entre 3 i 5 segons el buto <b>Persona 1</b> mentre parla la primera persona. Repetir-ho 4 o 5 cops</li>
+            <li>Mantenir pitjat entre 3 i 5 segons el buto <b>Persona 2</b> mentre parla la segona persona. Repetir-ho 4 o 5 cops</li>
+            <li>Pitjar el buto <b>Entrenar</b>, per un bon resultat, el valor final hauria de ser superior a 90%</li>
+        </ul>
+        <h2>Provar reconeixement</h2>
+        <ul>
+            <li>Pitjar escoltar</li>
+            <li>Escoltar durant 5 segons</li>
+            <li>Parar d'escoltar</li>
+            <li>dir qui estava parlant</li>
+        </ul>
+    </div>
+  </body>
+</html>
